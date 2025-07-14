@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="">
+        <div class="form">
+            <form action="/create" method="post">
+                <input type="text" name="title" placeholder="title here">
+                <textarea name="details" id="" placeholder="task details"></textarea>
+                <input type="submit" name="" id="" value="Create Task">
+            </form>
+        </div>
+        <div class="tasks">
+            <% if (fileforejs.length > 0) { %>
+                <% fileforejs.forEach( function(val) { %>
+                    <div class="task">
+                        <h1><%= val %></h1>
+                        <!-- <h1>some thing is here</h1> -->
+                        <a href="/files/<%= val %>">read more</a>   <!-- files is called because of the dir name  -->
+                        <a href="/edit/<%= val %>">rename file</a>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                    <h3>no task yet</h3>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
